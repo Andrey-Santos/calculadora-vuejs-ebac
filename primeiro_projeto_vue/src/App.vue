@@ -1,47 +1,22 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+const enderecoImagem = 'https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg';
+const nome = 'Andrey Carlos';
+const botaoEstaHabilitado = false;
+const meuObjeto = {
+  nome: 'Andrey',
+  filmeFavorito: 'Matrix'
+}
+
+function dizOla(nome){
+  return `${nome} diz oi`;
+}
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <!-- <h1>{{ meuObjeto.filmeFavorito }}</h1>; -->
+  <h1>{{ dizOla('paula') }}</h1>
+  <img :src="enderecoImagem" alt="Imagem">
+  <button :disabled="!botaoEstaHabilitado">Enviar mensagem</button>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+<style scoped></style>
